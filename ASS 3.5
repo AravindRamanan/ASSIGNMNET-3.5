@@ -49,7 +49,10 @@ Benefits of checkpointing:
 
 3) HDFS FEDERATION:
 
-                      HDFS Federation improves the existing HDFS architecture through a clear separation of namespace and storage, enabling generic block storage layer. It enables support for multiple namespaces in the cluster to improve scalability and isolation. Federation also opens up the architecture, expanding the applicability of HDFS cluster to new implementations and use cases.
+                      * HDFS Federation improves the existing HDFS architecture through a clear separation of namespace and storage, enabling generic block storage layer. It enables support for multiple namespaces in the cluster to improve scalability and isolation. Federation also opens up the architecture, expanding the applicability of HDFS cluster to new implementations and use cases.
+                      * In the HDFS Federation, there are multiple NameNodes, each storing the metadata and block mapping of files and directories contained in particular sub-directories.
+                      * The list of sub-directories managed by a NameNode is called a namespace volume.
+                      * Blocks for files belonging to a namespace is called a block pool.
 
 HDFS has two main layers:
 
@@ -59,6 +62,11 @@ HDFS has two main layers:
 2) Block Storagehas two parts:
 Block Management maintains the membership of datanodes in the cluster. It supports block-related operations such as creation, deletion, modification and getting location of the blocks. It also takes care of replica placement and replication.
 Physical Storage stores the blocks and provides read/write access to it.
+
+KEY BENEFITS:
+              * Scalability
+              * Isolation
+              * Design simplicity
 
 4)CONFIGURATION FILES THAT HAS TO BE EDITED WHILE INSTALLING A HADOOP CLUSTER:
 
